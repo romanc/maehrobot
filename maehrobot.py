@@ -61,8 +61,9 @@ def start_cmd(update, context):
     # track current version to send "What's new" messages
     setDefaultUserData(context, "version", CURRENT_VERSION)
 
-    # print help command to get users started
-    help_cmd(update, context)
+    update.message.reply_text(sheepSay(help(context.bot.name)),
+                              parse_mode='Markdown',
+                              disable_web_page_preview=True)
 
 
 def help_cmd(update, context):
